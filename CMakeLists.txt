@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.0)
+project(THREADPOOL)
+
+set(CMAKE_CXX_STANDARD 11)
+set(HOME /home/whx/thread-pool-c)
+set(EXECUTABLE_OUTPUT_PATH ${HOME}/bin/)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+file(GLOB SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
+add_executable(app ${SRC_LIST})
+target_link_libraries(app pthread)
